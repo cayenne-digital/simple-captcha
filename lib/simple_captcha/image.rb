@@ -74,9 +74,10 @@ module SimpleCaptcha #:nodoc
 
         SimpleCaptcha::Utils::run("convert", params.join(' '))
 
-        dst.close
-
-        File.expand_path(dst.path)
+        File.read(File.expand_path(dst.path))
+			ensure
+	      dst.close
+				dst.unlink
       end
   end
 end
