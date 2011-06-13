@@ -1,4 +1,5 @@
 class SimpleCaptchaController < ActionController::Metal
+  include ActionController::RackDelegation
   include ActionController::DataStreaming
   include SimpleCaptcha::ImageHelpers
 
