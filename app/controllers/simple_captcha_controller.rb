@@ -1,5 +1,5 @@
 class SimpleCaptchaController < ActionController::Metal
-  include ActionController::Streaming
+  include ActionController::DataStreaming
   include SimpleCaptcha::ImageHelpers
 
   # GET /simple_captcha
