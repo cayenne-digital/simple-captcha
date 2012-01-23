@@ -12,6 +12,7 @@ module SimpleCaptcha
   autoload :CustomFormBuilder, 'simple_captcha/formtastic'
 
   autoload :SimpleCaptchaData, 'simple_captcha/simple_captcha_data'
+  autoload :Middleware,        'simple_captcha/middleware'
 
   mattr_accessor :image_size
   @@image_size = "100x28"
@@ -48,4 +49,4 @@ module SimpleCaptcha
   end
 end
 
-require 'simple_captcha/railtie'
+require 'simple_captcha/engine' if defined?(Rails)

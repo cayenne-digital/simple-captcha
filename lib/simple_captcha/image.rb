@@ -1,3 +1,4 @@
+require 'tempfile'
 module SimpleCaptcha #:nodoc
   module ImageHelpers #:nodoc
 
@@ -74,10 +75,10 @@ module SimpleCaptcha #:nodoc
 
         SimpleCaptcha::Utils::run("convert", params.join(' '))
 
-        File.read(File.expand_path(dst.path))
-			ensure
-	      dst.close
-				dst.unlink
+        dst.close
+
+        File.expand_path(dst.path)
+        #dst
       end
   end
 end
